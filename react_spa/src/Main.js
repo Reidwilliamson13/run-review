@@ -11,10 +11,13 @@ function Main() {
         <h1>Simple SPA</h1>
         <ul className="header">
             <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/">The Run</NavLink></li>
-            <li><NavLink to="/">Reviews</NavLink></li>
+            <li><NavLink to="/RunPage">The Run</NavLink></li>
+            <li><NavLink to="/ReviewPage">Reviews</NavLink></li>
         </ul>
         <div className="content"></div>
+        <Route path="/" element={Home}/>
+            <Route path="/stuff" element={RunPage}/>
+            <Route path="/contact" element={ReviewPage}/>
       </BrowserRouter>
     </div>
   );
