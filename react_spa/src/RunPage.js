@@ -1,9 +1,9 @@
 import React from "react";
 
-function RecipePage() {
+function RunPage() {
   return (
     <div>
-      <h2>Recipe</h2>
+      <h2>The Run</h2>
       <p>Mauris sem velit, vehicula eget sodales vitae, rhoncus eget sapien:</p>
       <ol>
         <li>Nulla pulvinar diam</li>
@@ -16,4 +16,4 @@ function RecipePage() {
   );
 }
 
-export default RecipePage;
+export default RunPage;
