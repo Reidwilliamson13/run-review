@@ -15,8 +15,16 @@
 }
 
 .home_div {
-    height: 95vh;
-    color: white;
-    background-image: url("https://runninforsweets.com/wp-content/uploads/2020/04/14-Tips-for-Running-in-the-Dark-Cover.png")
-    
+  height: 95vh;
+  color: white;
+  background-image: url("https://runninforsweets.com/wp-content/uploads/2020/04/14-Tips-for-Running-in-the-Dark-Cover.png");
+}
+
+.review_page {
+  background-color: #282c34;
+  height: 95vh;
+  color: white;
+  padding: 4px;
+  font-family: Arial;
+  text-align: left;
 }
