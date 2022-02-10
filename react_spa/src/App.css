@@ -28,3 +28,16 @@
   font-family: Arial;
   text-align: left;
 }
+
+.textspace_review {
+  width: 100%; max-width: 100%;
+  background-color: rgb(170, 202, 202);
+}
+
+.textspace_trails {
+  background-color: rgb(170, 202, 202);
+}
+
+.textspace_name{
+  background-color: rgb(170, 202, 202);
+}

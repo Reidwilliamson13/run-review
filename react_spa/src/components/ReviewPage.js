@@ -1,53 +1,56 @@
-import React, {useState} from "react";
-import Axios from "axios";
+import React, { useState } from "react";
+import axios from "axios";
 
 function ReviewPage() {
-const url = ""
-const [data, setData] = useState({
-  name: "",
-  trail: "",
-  trailreview: ""
-})
+  const [nameInput, setName] = useState("");
+  const [trailInput, setTrail] = useState("");
+  const [reviewInput, setReview] = useState("");
 
-function submit(e){
-e.preventDefault();
-Axios.post(url,{
-  name: data.name,
-  trail: data.trail,
-  trailreview: data.trailreview
-})
-.then(res=>{
-  console.log(res.data)
-})
-}
-
-function handle(e){
-  const newdata={...data}
-  newdata[e.target.id] = e.target.value
-  setData(newdata)
-  console.log(newdata)
-}
   return (
     <div className="review_page">
       <h2>Share Your Experience!</h2>
       <p>Post your review!</p>
-      <form onSubmit={(e)=> submit(e)}>
-        <div class="form-group">
+      <form>
+        <div className="form-group">
           <div>
-            <input onChange={(e)=>handle(e)} id="name" value={data.name} placeholder="Name" type="value"/>
+            <input
+              className="textspace_name"
+              id="name_input"
+              placeholder="Name"
+              type="text"
+              value={nameInput}
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
           <div>
-            <input onChange={(e)=>handle(e)} id="trail" value={data.trail} placeholder="Trail/Park" type="value"/>
+            <select
+              className="textspace_trails"
+              value={trailInput}
+              onChange={(e) => setTrail(e.target.value)}
+            >
+              <option>Burke Lake Park</option>
+              <option>Lake Accotink</option>
+              <option>Armistead Park</option>
+              <option>Cherrydale Park</option>
+              <option>W & OD Trail</option>
+            </select>
           </div>
           <label for="exampleFormControlTextarea1">Review</label>
+          <br />
           <textarea
-            onChange={(e)=>handle(e)} id="trailreview" value={data.trailreview}
+            className="textspace_review"
+            id="trailreview_input"
             placeholder="Write a review!"
-            class="form-control"
             rows="3"
+            type="text"
+            value={reviewInput}
+            onChange={(e) => setReview(e.target.value)}
           ></textarea>
         </div>
         <button>Submit</button>
+        <p>{nameInput}</p>
+        <p>{trailInput}</p>
+        <p>{reviewInput}</p>
       </form>
     </div>
   );
