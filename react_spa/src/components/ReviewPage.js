@@ -10,7 +10,11 @@ const handleSubmit = (e) => {
  e.preventDefault();
 const aReview = { nameInput, trailInput, reviewInput };
 
-console.log(aReview);
+fetch("http://localhost:3000/Reviews", {
+  method: "POST",
+  headers: { "Content-Type": "application/json"},
+  body: JSON.stringify(aReview)
+})
 }
 
   return (
