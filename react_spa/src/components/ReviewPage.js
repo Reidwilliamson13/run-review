@@ -6,13 +6,18 @@ function ReviewPage() {
   const [trailInput, setTrail] = useState("");
   const [reviewInput, setReview] = useState("");
 
-const handleSubmit = () => {}
+const handleSubmit = (e) => {
+ e.preventDefault();
+const aReview = { nameInput, trailInput, reviewInput };
+
+console.log(aReview);
+}
 
   return (
     <div className="review_page">
       <h2>Share Your Experience!</h2>
       <p>Post your review!</p>
-      <form onSubmit={}>
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <div>
             <input
