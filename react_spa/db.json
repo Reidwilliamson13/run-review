@@ -12,11 +12,17 @@
       "trail": "Burke Lake",
       "review": "Great trail!"
     },
-      {
+    {
       "id": 2,
       "name": "Ralph",
       "trail": "Burke Lake",
       "review": "Excellent running!"
+    },
+    {
+      "nameInput": "jkbn k",
+      "trailInput": "Armistead Park",
+      "reviewInput": "fxhn",
+      "id": 3
     }
   ]
 }

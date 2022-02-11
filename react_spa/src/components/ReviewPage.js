@@ -14,6 +14,12 @@ fetch("http://localhost:3000/Reviews", {
   method: "POST",
   headers: { "Content-Type": "application/json"},
   body: JSON.stringify(aReview)
+}).then(resp => resp.json())
+.then(aReview => {
+  console.log("Success: ", aReview);
+})
+.catch((error) => {
+  console.error("Error: ", error);
 })
 }
 
