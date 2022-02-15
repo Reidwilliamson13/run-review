@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
+
 
 function ReviewPage() {
+
   const [nameInput, setName] = useState("");
   const [trailInput, setTrail] = useState("");
   const [reviewInput, setReview] = useState("");
@@ -23,10 +24,11 @@ fetch("http://localhost:3000/Reviews", {
 })
 }
 
+
   return (
     <div className="review_page">
       <h2>Share Your Experience!</h2>
-      <p>Post your review!</p>
+      <h3>Post your review!</h3>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <div>
@@ -72,5 +74,6 @@ fetch("http://localhost:3000/Reviews", {
     </div>
   );
 }
+
 
 export default ReviewPage;
