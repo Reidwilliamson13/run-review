@@ -22,7 +22,6 @@
 
 .review_page {
   background-color: #282c34;
-  height: 95vh;
   color: white;
   padding: 4px;
   font-family: Arial;
@@ -30,7 +29,8 @@
 }
 
 .textspace_review {
-  width: 100%; max-width: 100%;
+  width: 100%;
+  max-width: 100%;
   background-color: rgb(170, 202, 202);
 }
 
@@ -38,6 +38,20 @@
   background-color: rgb(170, 202, 202);
 }
 
-.textspace_name{
+.textspace_name {
   background-color: rgb(170, 202, 202);
+}
+
+.card {
+  color: black;
+  width: 90%;
+  display: flex;
+  margin: 5% 5% 5% 5%;
+  justify-content: center;
+  
+}
+
+.card-container {
+overflow-y: scroll;
+height: 20%;
 }

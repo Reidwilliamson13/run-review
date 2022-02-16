@@ -7,6 +7,14 @@ import ReviewPage from "./components/ReviewPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  // const [allReviews, setallReviews] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/Reviews")
+  //     .then((response) => response.json())
+  //     .then((reviews) => setallReviews(reviews));
+  // }, []);
+
   return (
     <div>
       <div>
