@@ -5,6 +5,48 @@
       "trailInput": "Lake Accotink",
       "reviewInput": "Best run of my life. Can't believe this was located only 15 miles from my house!",
       "id": 1
+    },
+    {
+      "nameInput": "John",
+      "trailInput": "Lake Accotink",
+      "reviewInput": "This was one of those trails that's just all around pleasant.",
+      "id": 2
+    },
+    {
+      "nameInput": "Freddy",
+      "trailInput": "Armistead Park",
+      "reviewInput": "I think the Armistead location used to be an old civil war site. I was hoping to see more memorials there but only one or two historical markers.",
+      "id": 3
+    },
+    {
+      "nameInput": "Jamie Moreno",
+      "trailInput": "W & OD Trail",
+      "reviewInput": "WOD did not disappoint!!! Definitely one of my favorites in this area and I can't wait to come back!!",
+      "id": 5
+    },
+    {
+      "nameInput": "Jessica Takreo",
+      "trailInput": "Burke Lake",
+      "reviewInput": "I ran this one with my boyfriend and we both thought it was a wonderful trail!!",
+      "id": 6
+    },
+    {
+      "nameInput": "Tammy Abraham",
+      "trailInput": "Armistead Park",
+      "reviewInput": "Got a great run in today here, amazing place!",
+      "id": 7
+    },
+    {
+      "nameInput": "Tim Waters",
+      "trailInput": "W & OD Trail",
+      "reviewInput": "Great run today, great location!",
+      "id": 8
+    },
+    {
+      "nameInput": "Reid Williamson",
+      "trailInput": "Lake Accotink",
+      "reviewInput": "This is a great park!",
+      "id": 9
     }
   ]
 }

@@ -10,10 +10,12 @@ function ReviewPage() {
   function createCard(allReviews) {
     const reviewCard = allReviews.map((review) => {
       return (
-        <div className="card " >
+        <div className="card">
           <div className="card-body">
             <h5 className="card-title">{review.nameInput} says...</h5>
-            <h6 className="card-subtitle mb-2 text-muted">({review.trailInput})</h6>
+            <h6 className="card-subtitle mb-2 text-muted">
+              ({review.trailInput})
+            </h6>
             <p className="card-text">{review.reviewInput}</p>
           </div>
         </div>
@@ -34,6 +36,9 @@ function ReviewPage() {
       .then((resp) => resp.json())
       .then((aReview) => {
         console.log("Success: ", aReview);
+        setReview("");
+        setTrail("");
+        setName("");
       })
       .catch((error) => {
         console.error("Error: ", error);

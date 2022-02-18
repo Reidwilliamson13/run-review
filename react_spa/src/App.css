@@ -31,15 +31,15 @@
 .textspace_review {
   width: 100%;
   max-width: 100%;
-  background-color: rgb(170, 202, 202);
+  background-color: rgb(213, 224, 224);
 }
 
 .textspace_trails {
-  background-color: rgb(170, 202, 202);
+  background-color: rgb(213, 224, 224);
 }
 
 .textspace_name {
-  background-color: rgb(170, 202, 202);
+  background-color: rgb(213, 224, 224);
 }
 
 .card {
@@ -54,4 +54,8 @@
 .card-container {
 overflow-y: scroll;
 height: 20%;
+}
+
+.card-body {
+  background-color: rgb(213, 224, 224);
 }
