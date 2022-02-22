@@ -19,6 +19,9 @@ A description of features included in the components of the Run Review App
 
 ### Challenges or potential mods
 
+- This project could have made more use of other hooks
+- Potential modifications or stretch goal could be to add another input on the form and set up another useState for that 
+
 In the project directory, you can run:
 
 
