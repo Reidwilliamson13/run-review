@@ -1,5 +1,5 @@
 .trailclass {
-  background-color: #282c34;
+  background-color: #281c34;
   color: white;
   padding: 40px;
   font-family: Arial;
@@ -7,7 +7,7 @@
 }
 
 .runlist_intro {
-  background-color: #282c34;
+  background-color: #281c34;
   color: white;
   padding: 4px;
   font-family: Arial;
@@ -21,7 +21,7 @@
 }
 
 .review_page {
-  background-color: #282c34;
+  background-color: #281c34;
   color: white;
   padding: 4px;
   font-family: Arial;
@@ -48,12 +48,11 @@
   display: flex;
   margin: 5% 5% 5% 5%;
   justify-content: center;
-  
 }
 
 .card-container {
-overflow-y: scroll;
-height: 20%;
+  overflow-y: scroll;
+  height: 20%;
 }
 
 .card-body {
