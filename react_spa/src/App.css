@@ -1,5 +1,5 @@
 .trailclass {
-  background-color: #281c34;
+  background-color: #282c34;
   color: white;
   padding: 40px;
   font-family: Arial;
@@ -7,7 +7,7 @@
 }
 
 .runlist_intro {
-  background-color: #281c34;
+  background-color: #282c34;
   color: white;
   padding: 4px;
   font-family: Arial;
@@ -21,7 +21,7 @@
 }
 
 .review_page {
-  background-color: #281c34;
+  background-color: #282c34;
   color: white;
   padding: 4px;
   font-family: Arial;
@@ -31,15 +31,15 @@
 .textspace_review {
   width: 100%;
   max-width: 100%;
-  background-color: rgb(213, 224, 224);
+  background-color: rgb(212, 224, 224);
 }
 
 .textspace_trails {
-  background-color: rgb(213, 224, 224);
+  background-color: rgb(212, 224, 224);
 }
 
 .textspace_name {
-  background-color: rgb(213, 224, 224);
+  background-color: rgb(212, 224, 224);
 }
 
 .card {
