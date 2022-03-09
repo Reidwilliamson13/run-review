@@ -17,7 +17,7 @@ function ReviewPage({ allReviews, loading, setLoading }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const aReview = { nameInput, trailInput, reviewInput };
-
+// better way to do this //
     fetch("http://localhost:3000/Reviews", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

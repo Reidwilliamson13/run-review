@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [allReviews, setallReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-
+// 
   useEffect(() => {
     if (loading) {
       fetch("http://localhost:3000/Reviews")
