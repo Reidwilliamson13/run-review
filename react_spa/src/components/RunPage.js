@@ -2,29 +2,8 @@ import React from "react";
 import "../App.css";
 
 function RunPage() {
-  const trailArray = [
-    {
-      name: "Burke Lake Park",
-      description:
-        "This has been an all time favorite. I don't know if it's all the nature, the closeness to the lake, or the fact that there's a train that runs throughout the middle of the trail and park, this is one of the nicest places to get a good run in and enjoy the scenary at the same time.",
-      image:
-        "https://assets.simpleviewinc.com/simpleview/image/upload/crm/fairfax/Burke-Lake-Dock0_c0485a11-5056-a36a-06c8d23f20392e50.jpg",
-    },
-    {
-      name: "Lake Accotink Park",
-      description:
-        "Lake Accotink continues to be one of the areas most popular tourist locations for families as the park ahas recently updated ammenities making it a great place for young families. Also the running trail has since been renovated and has wonderful views of the lake and man made waterfalls.",
-      image:
-        "https://www.fairfaxcounty.gov/parks/sites/parks/files/Assets/images/picnics/lake-accotink-small-shelter-1.jpg",
-    },
-    {
-      name: "Armistead Park",
-      description:
-        "This park is nearest to me and so I go running here quite often. Though it lacks a lot of beautiful sights the others on the list have, it does have plenty of hills and steep inclines if you are like me these help to provide good resistance which makes for a better workout.",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPuqzKKl09qWPKyAvcyj74i7CDcrANHHSAfQ&usqp=CAU",
-    },
-  ];
+// useState fetch //
+const [trlName, settrlName] = useState("");
 
   return (
     <div className="trailclass">
