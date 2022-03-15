@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [allReviews, setallReviews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [descriptions, setallDescriptions] = useState([])
 // 
   useEffect(() => {
     if (loading) {
@@ -19,6 +20,15 @@ function App() {
     }
   }, [loading]);
 
+   useEffect(() => {
+     if (loading) {
+       fetch("http://localhost:3000/Descriptions")
+         .then((response) => response.json())
+         .then((descriptions) => setallDescriptions(descriptions));
+       setLoading(false);
+     }
+   }, [loading]);
+
   return (
     <div>
       <div>
@@ -26,10 +36,13 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/runpage" element={<RunPage />} />
+        <Route path="/runpage" element={<RunPage 
+          descriptions = {descriptions} 
+          />} 
+          />
         <Route
           path="/reviewpage"
-          element={
+          element={ 
             <ReviewPage
               allReviews={allReviews}
               setallReviews={setallReviews}
