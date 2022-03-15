@@ -2,7 +2,7 @@ import React from "react";
 import "../App.css";
 
 function RunPage({ descriptions }) {
-  console.log(descriptions);
+ 
   return (
     <div className="trailclass">
       <div className="runlist_intro">
