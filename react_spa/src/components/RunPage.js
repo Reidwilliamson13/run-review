@@ -10,7 +10,8 @@ function RunPage({ descriptions }) {
         <p>
           The weather has held up this week in terms of no rain or snow, here's
           this week's list:
-        </p>
+        </p>s
+        
         <ol>
           <li>Burke Lake Park, Burke</li>
           <li>Lake Accotink, Manassas</li>
