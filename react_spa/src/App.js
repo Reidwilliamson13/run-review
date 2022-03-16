@@ -9,25 +9,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [allReviews, setallReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [descriptions, setallDescriptions] = useState([])
-// 
+  const [descriptions, setDescriptions] = useState([]);
+  //
   useEffect(() => {
     if (loading) {
       fetch("http://localhost:3000/Reviews")
         .then((response) => response.json())
         .then((reviews) => setallReviews(reviews));
+
+      fetch("http://localhost:3000/Description")
+        .then((response) => response.json())
+        .then((descriptions) => setDescriptions(descriptions));
+
       setLoading(false);
     }
   }, [loading]);
-
-   useEffect(() => {
-     if (loading) {
-       fetch("http://localhost:3000/Descriptions")
-         .then((response) => response.json())
-         .then((descriptions) => setallDescriptions(descriptions));
-       setLoading(false);
-     }
-   }, [loading]);
 
   return (
     <div>
@@ -36,13 +32,13 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/runpage" element={<RunPage 
-          descriptions = {descriptions} 
-          />} 
-          />
+        <Route
+          path="/runpage"
+          element={<RunPage descriptions={descriptions} loading={loading} />}
+        />
         <Route
           path="/reviewpage"
-          element={ 
+          element={
             <ReviewPage
               allReviews={allReviews}
               setallReviews={setallReviews}
