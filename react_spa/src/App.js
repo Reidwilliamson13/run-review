@@ -10,7 +10,7 @@ function App() {
   const [allReviews, setallReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [descriptions, setDescriptions] = useState([]);
-  //
+
   useEffect(() => {
     if (loading) {
       fetch("http://localhost:3000/Reviews")
