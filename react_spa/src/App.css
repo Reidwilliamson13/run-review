@@ -1,60 +1,10 @@
-.trailclass {
-  background-color: #282c34;
-  color: white;
-  padding: 40px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  text-align: center;
-}
-
-.runlist_intro {
-  background-color: #282c34;
-  color: white;
-  padding: 4px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  text-align: left;
-}
-
-.home_div {
-  height: 95vh;
-  color: white;
+html {
+  min-height: 100%;
   background-image: url("https://runninforsweets.com/wp-content/uploads/2020/04/14-Tips-for-Running-in-the-Dark-Cover.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
-
-.review_page {
-  background-color: #282c34;
-  color: white;
-  padding: 4px;
-  font-family: Arial;
-  text-align: left;
-}
-
-.textspace_review {
-  width: 100%;
-  max-width: 100%;
-  background-color: rgb(212, 224, 224);
-}
-
-.textspace_trails {
-  background-color: rgb(212, 224, 224);
-}
-
-.textspace_name {
-  background-color: rgb(212, 224, 224);
-}
-
-.card {
-  color: black;
-  width: 90%;
-  display: flex;
-  margin: 5% 5% 5% 5%;
-  justify-content: center;
-}
-
-.card-container {
-  overflow-y: scroll;
-  height: 20%;
-}
-
-.card-body {
-  background-color: rgb(213, 224, 224);
+body {
+  background-color: transparent !important;
 }

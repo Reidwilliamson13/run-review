@@ -4,7 +4,7 @@ import Form from "./Form";
 
 function ReviewPage({ allReviews, loading, setLoading }) {
   const [nameInput, setName] = useState("");
-  const [trailInput, setTrail] = useState("");
+  const [trailInput, setTrail] = useState("Burke Lake Park");
   const [reviewInput, setReview] = useState("");
   const options = [
     "Burke Lake Park",

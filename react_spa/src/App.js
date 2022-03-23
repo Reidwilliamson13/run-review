@@ -8,8 +8,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [allReviews, setallReviews] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [descriptions, setDescriptions] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (loading) {
