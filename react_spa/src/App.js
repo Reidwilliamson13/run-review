@@ -7,9 +7,20 @@ import ReviewPage from "./components/ReviewPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const options = [
+    "Burke Lake Park",
+    "Lake Accotink",
+    "Armistead Park",
+    "Cherrydale Park",
+    "W & OD Trail",
+  ];
+
   const [allReviews, setallReviews] = useState([]);
   const [descriptions, setDescriptions] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [nameInput, setName] = useState("");
+  const [trailInput, setTrail] = useState(options[0]);
+  const [reviewInput, setReview] = useState("");
 
   useEffect(() => {
     if (loading) {
@@ -25,6 +36,27 @@ function App() {
     }
   }, [loading]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const aReview = { nameInput, trailInput, reviewInput };
+
+    fetch("http://localhost:3000/Reviews", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(aReview),
+    })
+      .then((resp) => resp.json())
+      .then((aReview) => {
+        setReview("");
+        setTrail(options[0]);
+        setName("");
+      })
+      .catch((error) => {
+        console.error("Error: ", error);
+      });
+    setLoading(true);
+  };
+
   return (
     <div>
       <div>
@@ -34,7 +66,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/runpage"
-          element={<RunPage descriptions={descriptions} loading={loading} />}
+          element={
+            <RunPage
+              descriptions={descriptions}
+              loading={loading}
+              options={options}
+            />
+          }
         />
         <Route
           path="/reviewpage"
@@ -43,7 +81,14 @@ function App() {
               allReviews={allReviews}
               setallReviews={setallReviews}
               loading={loading}
-              setLoading={setLoading}
+              nameInput={nameInput}
+              setName={setName}
+              trailInput={trailInput}
+              setTrail={setTrail}
+              reviewInput={reviewInput}
+              setReview={setReview}
+              handleSubmit={handleSubmit}
+              options={options}
             />
           }
         />

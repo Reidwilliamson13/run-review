@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReviewDisplay from "./ReviewDisplay";
 import Form from "./Form";
 
+
 function ReviewPage({ allReviews, loading, setLoading }) {
   const [nameInput, setName] = useState("");
   const [trailInput, setTrail] = useState("Burke Lake Park");
@@ -14,10 +15,11 @@ function ReviewPage({ allReviews, loading, setLoading }) {
     "W & OD Trail",
   ];
 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const aReview = { nameInput, trailInput, reviewInput };
-// better way to do this //
     fetch("http://localhost:3000/Reviews", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -34,6 +36,8 @@ function ReviewPage({ allReviews, loading, setLoading }) {
       });
     setLoading(true);
   };
+
+
 
   return (
     <div className="review_page">
