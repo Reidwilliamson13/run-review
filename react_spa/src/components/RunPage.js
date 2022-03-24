@@ -1,39 +1,61 @@
 import React from "react";
+import { Spinner } from "react-bootstrap";
 import "../App.css";
 
-function RunPage({ descriptions, loading }) {
-
-  console.log(descriptions);
-
+function RunPage({ descriptions, loading, options }) {
   return (
-    <div className="trailclass">
-      {!loading ? <> <div className="runlist_intro">
-        <h2>Week of 2/7 - 2/13</h2>
-        <p>
-          The weather has held up this week in terms of no rain or snow, here's
-          this week's list:
-        </p>
-        <ol>
-          <li>Burke Lake Park, Burke</li>
-          <li>Lake Accotink, Manassas</li>
-          <li>Armistead Park, Fairfax</li>
-          <li>Cherrydale Park, Arlington</li>
-          <li>W & OD Trail, Reston</li>
-        </ol>
-      </div>
-      {descriptions.map((description, idx) => {
-        return (
-          <div key={idx}>
-            <h2>{description.name}</h2>
-            <p>
-              {description.description}
-              <br />
-              <img src={description.image} alt={description.name}></img>
+    <div className="p-5 bg-dark text-light">
+      {!loading ? (
+        <>
+          <div className="jumbotron">
+            <h2 className="display-6">Week of 2/7 - 2/13</h2>
+            <p className="lead">
+              The weather has held up this week in terms of no rain or snow,
+              here's this week's list:
             </p>
+            <hr className="my-4" />
+            <ol>
+              {options.map((option) => (
+                <li key={option}>{option}</li>
+              ))}
+            </ol>
+            <hr className="my-4" />
           </div>
-      )})} </> : <h3>Loading...</h3>}
-      </div>
+          <div style={{ overflow: "scroll", height: "500px" }}>
+            {descriptions.map((description, idx) => {
+              return (
+                <div
+                  className="card text-dark mb-5"
+                  style={{
+                    width: "40%",
+                    marginLeft: "30%",
+                    marginRight: "30%",
+                  }}
+                  key={idx}
+                >
+                  <img
+                    className="card-img-top"
+                    src={description.image}
+                    alt={description.name}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{description.name}</h5>
+                    <p className="card-text">{description.description}</p>
+                  </div>
+                </div>
+              );
+            })}{" "}
+          </div>
+        </>
+      ) : (
+        <div className="bg-dark vh-100 d-flex justify-content-center">
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
+      )}
+    </div>
   );
-        }
+}
 
 export default RunPage;
