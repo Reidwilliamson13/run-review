@@ -1,50 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import ReviewDisplay from "./ReviewDisplay";
+import { Spinner } from "react-bootstrap";
 import Form from "./Form";
 
-
-function ReviewPage({ allReviews, loading, setLoading }) {
-  const [nameInput, setName] = useState("");
-  const [trailInput, setTrail] = useState("Burke Lake Park");
-  const [reviewInput, setReview] = useState("");
-  const options = [
-    "Burke Lake Park",
-    "Lake Accotink",
-    "Armistead Park",
-    "Cherrydale Park",
-    "W & OD Trail",
-  ];
-
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const aReview = { nameInput, trailInput, reviewInput };
-    fetch("http://localhost:3000/Reviews", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(aReview),
-    })
-      .then((resp) => resp.json())
-      .then((aReview) => {
-        setReview("");
-        setTrail("");
-        setName("");
-      })
-      .catch((error) => {
-        console.error("Error: ", error);
-      });
-    setLoading(true);
-  };
-
-
-
+function ReviewPage({
+  allReviews,
+  loading,
+  nameInput,
+  setName,
+  trailInput,
+  setTrail,
+  reviewInput,
+  setReview,
+  handleSubmit,
+  options,
+}) {
   return (
-    <div className="review_page">
+    <div className="bg-dark p-5">
       {!loading ? (
-        <div>
-          <h2>Share Your Experience!</h2>
-          <h3>Post your review!</h3>
+        <div className="text-white">
+          <h2 className="display-5">Share Your Experience!</h2>
+          <h2 className="lead">Post your review!</h2>
           <Form
             nameInput={nameInput}
             trailInput={trailInput}
@@ -55,10 +31,17 @@ function ReviewPage({ allReviews, loading, setLoading }) {
             options={options}
             handleSubmit={handleSubmit}
           />
-          <ReviewDisplay allReviews={allReviews} loading={loading} />{" "}
+          <hr className="my-4" />
+          <div style={{ overflow: "scroll", height: "500px" }}>
+            <ReviewDisplay allReviews={allReviews} loading={loading} />{" "}
+          </div>
         </div>
       ) : (
-        <h3>Loading...</h3>
+        <div className="d-flex justify-content-center bg-dark vh-100 text-white">
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
       )}
     </div>
   );
