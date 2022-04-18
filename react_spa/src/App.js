@@ -61,19 +61,11 @@ function App() {
     setLoading(true); 
   };
 
-  const handleDelete = (id) => {
+const handleSearch = (e, idx) =>
+  {
+    setallReviews(prevState => prevState.filter((review) => (review.nameInput === e)))
 
-    fetch("http://localhost:3000/Reviews/" + id, {
-      method: "DELETE",
-      //no need to have the body because we are not sending anything to the server
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res))
-      .catch((error) => {
-        console.error("Error: ", error);
-      });
-    setLoading(true); 
-  };
+}
 
 
 
@@ -108,8 +100,9 @@ function App() {
               reviewInput={reviewInput}
               setReview={setReview}
               handleSubmit={handleSubmit}
+              handleSearch={handleSearch}
               options={options}
-              handleDelete={handleDelete}
+              
             />
           }
         />

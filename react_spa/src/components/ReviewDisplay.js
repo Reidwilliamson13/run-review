@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReviewDisplay = ({ allReviews, loading, handleDelete }) => {
+const ReviewDisplay = ({ allReviews, loading }) => {
   function createCard(allReviews) {
     const reviewCard = allReviews.map((review, idx) => {
       return (
@@ -12,9 +12,6 @@ const ReviewDisplay = ({ allReviews, loading, handleDelete }) => {
                 ({review.trailInput})
               </h6>
               <p className="card-text">{review.reviewInput}</p>
-              <button onClick={() => handleDelete(review.id)} type="button" className="btn btn-primary btn-sm">
-                Delete
-              </button>
             </div>
           </div>
         </div>

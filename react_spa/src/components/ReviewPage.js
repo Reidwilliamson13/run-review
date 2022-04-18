@@ -1,6 +1,6 @@
 import React from "react";
 import ReviewDisplay from "./ReviewDisplay";
-import { Spinner } from "react-bootstrap";
+import { Spinner, InputGroup, FormControl} from "react-bootstrap";
 import Form from "./Form";
 
 //onChange={(e) => handleSearch(e.target.value)}
@@ -17,7 +17,7 @@ function ReviewPage({
   reviewInput,
   setReview,
   handleSubmit,
-  handleDelete,
+  handleSearch,
   options,
 }) {
   return (
@@ -26,6 +26,14 @@ function ReviewPage({
         <div className="text-white">
           <h2 className="display-5">Share Your Experience!</h2>
           <h2 className="lead">Post your review!</h2>
+          <InputGroup size="sm" className="mb-3">
+            <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
+            <FormControl
+              onChange={(e, idx) => handleSearch(e.target.value, idx)}
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </InputGroup>
           <Form
             nameInput={nameInput}
             trailInput={trailInput}
@@ -37,10 +45,10 @@ function ReviewPage({
             handleSubmit={handleSubmit}
           />
           <hr className="my-4" />
-          <div style={{ overflow: "scroll", height: "500px" }}> 
-            <ReviewDisplay allReviews={allReviews} loading={loading} handleDelete={handleDelete}/>{" "}
+          <div style={{ overflow: "scroll", height: "500px" }}>
+            <ReviewDisplay allReviews={allReviews} loading={loading} />{" "}
           </div>
-        </div> 
+        </div>
       ) : (
         <div className="d-flex justify-content-center bg-dark vh-100 text-white">
           <Spinner animation="border" role="status">
