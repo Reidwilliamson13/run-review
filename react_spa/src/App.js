@@ -6,15 +6,16 @@ import RunPage from "./components/RunPage";
 import ReviewPage from "./components/ReviewPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
-  const options = [
-    "Burke Lake Park",
-    "Lake Accotink",
-    "Armistead Park",
-    "Cherrydale Park",
-    "W & OD Trail",
-  ];
+const options = [
+  "Burke Lake Park",
+  "Lake Accotink Park",
+  "Armistead Park",
+  "Cherrydale Park",
+  "W&OD Trail",
+];  
 
+
+function App() {
   const [allReviews, setallReviews] = useState([]);
   const [descriptions, setDescriptions] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,9 +23,10 @@ function App() {
   const [trailInput, setTrail] = useState(options[0]);
   const [reviewInput, setReview] = useState("");
 
+
   useEffect(() => {
     if (loading) {
-      fetch("http://localhost:3000/Reviews")
+      fetch("http://localhost:3000/Reviews") // 3 - GET updated reviews with last post
         .then((response) => response.json())
         .then((reviews) => setallReviews(reviews));
 
@@ -32,9 +34,11 @@ function App() {
         .then((response) => response.json())
         .then((descriptions) => setDescriptions(descriptions));
 
-      setLoading(false);
+      setLoading(false); 
     }
-  }, [loading]);
+  }, [loading]); 
+
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,7 +48,7 @@ function App() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(aReview),
-    })
+    }) 
       .then((resp) => resp.json())
       .then((aReview) => {
         setReview("");
@@ -54,14 +58,30 @@ function App() {
       .catch((error) => {
         console.error("Error: ", error);
       });
-    setLoading(true);
+    setLoading(true); 
   };
+
+  const handleDelete = (id) => {
+
+    fetch("http://localhost:3000/Reviews/" + id, {
+      method: "DELETE",
+      //no need to have the body because we are not sending anything to the server
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((error) => {
+        console.error("Error: ", error);
+      });
+    setLoading(true); 
+  };
+
+
+
 
   return (
     <div>
-      <div>
-        <NavBar />
-      </div>
+      <NavBar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -89,6 +109,7 @@ function App() {
               setReview={setReview}
               handleSubmit={handleSubmit}
               options={options}
+              handleDelete={handleDelete}
             />
           }
         />

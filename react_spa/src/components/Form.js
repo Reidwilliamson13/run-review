@@ -8,7 +8,7 @@ const Form = ({
   setTrail,
   setReview,
   options,
-  handleSubmit,
+  handleSubmit
 }) => {
 
   return (
@@ -25,7 +25,7 @@ const Form = ({
           placeholder="Name"
           type="text"
           onChange={(e) => setName(e.target.value)}
-          required
+          required 
         />
       </div>
       <div className="form-group">
@@ -49,12 +49,13 @@ const Form = ({
           type="text"
           value={reviewInput}
           onChange={(e) => setReview(e.target.value)}
-          required
+          required  
         />
       </div>
       <button type="submit" className="btn btn-primary mt-4">
         Submit
       </button>
+
     </form>
   );
 };

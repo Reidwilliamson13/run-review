@@ -3,6 +3,10 @@ import ReviewDisplay from "./ReviewDisplay";
 import { Spinner } from "react-bootstrap";
 import Form from "./Form";
 
+//onChange={(e) => handleSearch(e.target.value)}
+
+//reviewInput.filter(review => review.charAt(0) === e)
+
 function ReviewPage({
   allReviews,
   loading,
@@ -13,6 +17,7 @@ function ReviewPage({
   reviewInput,
   setReview,
   handleSubmit,
+  handleDelete,
   options,
 }) {
   return (
@@ -32,10 +37,10 @@ function ReviewPage({
             handleSubmit={handleSubmit}
           />
           <hr className="my-4" />
-          <div style={{ overflow: "scroll", height: "500px" }}>
-            <ReviewDisplay allReviews={allReviews} loading={loading} />{" "}
+          <div style={{ overflow: "scroll", height: "500px" }}> 
+            <ReviewDisplay allReviews={allReviews} loading={loading} handleDelete={handleDelete}/>{" "}
           </div>
-        </div>
+        </div> 
       ) : (
         <div className="d-flex justify-content-center bg-dark vh-100 text-white">
           <Spinner animation="border" role="status">

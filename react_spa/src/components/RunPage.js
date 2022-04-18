@@ -2,7 +2,7 @@ import React from "react";
 import { Spinner } from "react-bootstrap";
 import "../App.css";
 
-function RunPage({ descriptions, loading, options }) {
+function RunPage({ descriptions, loading, options}) {
   return (
     <div className="p-5 bg-dark text-light">
       {!loading ? (
@@ -39,7 +39,7 @@ function RunPage({ descriptions, loading, options }) {
                     alt={description.name}
                   />
                   <div className="card-body">
-                    <h5 className="card-title">{description.name}</h5>
+                    <h4 className="card-title">{description.name}</h4>
                     <p className="card-text">{description.description}</p>
                   </div>
                 </div>
